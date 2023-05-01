@@ -1,11 +1,12 @@
 import { Injectable } from "@nestjs/common";
+import { UsuarioEntity } from "./usuario.entity";
 
 @Injectable()
 export class UsuarioRepository{
 
-    usuarios = [];
+    private usuarios: UsuarioEntity[] = [];
 
-    async inserir(usuario){
+    async salvar(usuario: UsuarioEntity){
         this.usuarios.push(usuario);
     }
 
