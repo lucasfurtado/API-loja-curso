@@ -44,4 +44,14 @@ export class UsuarioController{
         mensagem: 'Usuário atualizado com sucesso',
       }
     }
+
+    @Delete('/:id')
+    async removeUsuario(@Param('id') id: string){
+      const usuarioRemovido = await this.usuarioRepository.remove(id);
+
+      return {
+        usuario: usuarioRemovido,
+        mensagem: 'Usuário removido com sucesso.'
+      }
+    }
 }
