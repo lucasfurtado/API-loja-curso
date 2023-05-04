@@ -10,7 +10,7 @@ export class PostgresConfigService implements TypeOrmOptionsFactory{
 
     createTypeOrmOptions(connectionName?: string): TypeOrmModuleOptions | Promise<TypeOrmModuleOptions> {
         return{
-            type: 'postgres',
+            type: 'mysql',
             host: this.configService.get<string>('DB_HOST'),
             port: this.configService.get<number>('DB_PORT'),
             username: this.configService.get<string>('DB_USER'),
